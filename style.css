@@ -1,0 +1,45 @@
+/* Style de la navigation */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+/* Effet sur les cartes */
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Taille réduite des images */
+.card-img-top {
+    height: 200px; /* Limitation de la hauteur */
+    object-fit: cover; /* Adapter l'image à la taille */
+}
+
+/* Section accueil */
+#accueil {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style des compétences */
+#competences i {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Style du footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}

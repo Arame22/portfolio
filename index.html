@@ -5,44 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Ndeye Arame NIANG</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Section Accueil -->
-    <header class="bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1 class="display-4">Ndeye Arame NIANG</h1>
-            <p class="lead">Junior Data Scientist | IA & DevOps Enthusiast</p>
-            <a href="#projets" class="btn btn-light btn-lg mt-3">Voir mes projets</a>
-        </div>
+    <!-- Header and Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Section Projets -->
-    <section id="projets" class="py-5">
+    <!-- Accueil Section -->
+    <section id="accueil" class="bg-primary text-white text-center py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Mes Projets</h2>
-            <div class="row">
-                <!-- Exemple de projet -->
+            <h1 class="display-4">Ndeye Arame NIANG</h1>
+            <p class="lead">Junior Data Analyst | IA & DevOps Enthusiast</p>
+            <a href="#projets" class="btn btn-light btn-lg">Voir mes projets</a>
+        </div>
+    </section>
+
+    <!-- À propos Section -->
+    <section id="apropos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">À propos de moi</h2>
+            <div class="row align-items-center">
                 <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/robot-chat-bot.jpg" class="card-img-top" alt="Projet 1">
-                        <div class="card-body">
-                            <h5 class="card-title">IAgora Chatbot</h5>
-                            <p class="card-text">Un chatbot éducatif et administratif pour l'eBIHAR program.</p>
-                            <a href="#" class="btn btn-primary">Voir plus</a>
-                        </div>
-                    </div>
+                    <img src="img/portrait.jpg" alt="Portrait" class="img-fluid rounded-circle">
                 </div>
-                <!-- Ajouter d'autres projets ici -->
+                <div class="col-md-8">
+                    <p>Je suis une jeune passionnée de data science et d’intelligence artificielle, avec une expertise en analyse de données et un intérêt marqué pour les outils DevOps. Diplômée en Big Data et Intelligence Artificielle, je cherche à relever des défis techniques et stratégiques pour transformer les données en solutions concrètes. Mon objectif : utiliser la puissance des données et de l’IA pour concevoir des innovations qui font la différence.
+                    </p>
+                    <a href="cv_ndeye_arame_niang.pdf" class="btn btn-primary mt-3">Télécharger mon CV</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Contact -->
-    <footer class="bg-dark text-white text-center py-4">
+    <!-- Projets Section -->
+    <section id="projets" class="py-5 bg-light">
         <div class="container">
-            <p>Contactez-moi : <a href="ng.niang1@outlook.fr" class="text-white">ng.niang1@outlook.fr</a></p>
+            <h2 class="text-center mb-4">Mes Projets</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/projet1.jpg" class="card-img-top" alt="Projet 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Chatbot</h5>
+                            <p class="card-text">L'objectif principal de ce projet est de développer un chatbot éducatif et administratif pour le programme en ligne. Ce chatbot fournit une assistance aux étudiants et aux professeurs, tant pour leurs besoins académiques que pour des tâches administratives telles que l’inscription et la recherche de stages.
+                            Le développement repose sur l’utilisation de l'IA Générative, notamment via COPILOT Studio de Microsoft, permettant l’intégration de divers types de données (pdf, contenu textuel des chats).
+                            </p>
+                            <p><strong>Technologies :</strong> Python, Copilot Studio, PHP, Azure, Mustach Template</p>
+                            <a href="projet1.html" class="btn btn-primary">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/projet2.webp" class="card-img-top" alt="Projet 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Classification d'images</h5>
+                            <p class="card-text">Le projet consiste à développer un modèle de classification multi-classes d'images de champs de maïs, capturées à l'aide d'un smartphone, afin de simuler une vue depuis une machine de pulvérisation équipée d'une caméra. L'objectif est d'identifier les zones à arroser en distinguant quatre classes principales : sol sec sans végétation, végétation de maïs , plantes herbacées diverses, et une combinaison de maïs et de mauvaises herbes.
+                            <p><strong>Technologies :</strong> Python, CNN, Models préentrainés(VGG19, VGG16, Xception)</p>
+                            <a href="projet1.html" class="btn btn-primary">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/projet3.webp" class="card-img-top" alt="Projet 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Classification d'images</h5>
+                            <p class="card-text">L'objectif de ce projet est de construire un modèle de classification de critiques de films en français selon leur tonalité, qu'elle soit positive ou négative. Pour ce faire, nous disposons d'un ensemble de données comprenant 100 000 critiques positives et 100 000 critiques négatives extraites du site allocine.fr sur la période de 2006 à 2020. Le jeu de données est divisé en ensembles d'entraînement (160 000 critiques), de validation (20 000 critiques) et de test (20 000 critiques)
+                            <p><strong>Technologies :</strong> Python, TF-IDF, Bow, CNN, LSTM</p>
+                            <a href="projet1.html" class="btn btn-primary">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section id="competences" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Compétences</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <i class="fab fa-python fa-3x"></i>
+                    <p>Python</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fab fa-docker fa-3x"></i>
+                    <p>Docker</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fab fa-linux fa-3x"></i>
+                    <p>Linux</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fas fa-database fa-3x"></i>
+                    <p>SQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-3">
+        <div class="container">
             <p>&copy; 2024 Ndeye Arame NIANG. Tous droits réservés.</p>
+            <div>
+                <a href="https://github.com/Arame22" class="text-white me-3"><i class="fab fa-github"></i></a>
+                <a #contact href="https://www.linkedin.com/in/ndeye-arame-niang-b62909229/" class="text-white"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </footer>
 
