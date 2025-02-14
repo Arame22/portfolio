@@ -3,6 +3,7 @@
     position: sticky;
     top: 0;
     z-index: 1020;
+    background-color: #007bff; /* Background color for navbar */
 }
 
 /* Effet sur les cartes */
@@ -13,8 +14,42 @@
 
 /* Taille réduite des images */
 .card-img-top {
-    height: 200px; /* Limitation de la hauteur */
     object-fit: cover; /* Adapter l'image à la taille */
+    height: 200px; /* Fix the height of the images */
+}
+
+/* Background for the projects section */
+#projets {
+    background-image: url('img/projet3.webp');
+    background-size: cover;
+    background-position: center;
+    color: white; /* Text color for better readability */
+}
+
+/* Adapter l'image à la taille */
+#projets .card-img-top {
+    object-fit: cover;
+    height: 200px;
+}
+/*diminuer le bloc projet*/
+#projets .card {
+    height: 400px;
+}
+/* bloc projet*/
+#projets .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+/*image projet*/
+#projets .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+/* Style des boutons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
 }
 
 /* Section accueil */
@@ -22,12 +57,12 @@
     background-color: #007bff;
     color: white;
     text-align: center;
-    padding: 5rem 0;
+    font-family: 'Arial', sans-serif; /* Changer la police */
 }
 
-/* Style général */
+/* Global font style */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Changer la police */
 }
 
 /* Style des compétences */
