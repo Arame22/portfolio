@@ -199,6 +199,7 @@ footer, footer a, footer .text-white { color: var(--text-color) !important; }
     box-shadow: var(--shadow-sm);
     padding: 1rem 0;
     transition: background-color var(--transition-normal);
+    z-index: 1100;
 }
 
 .navbar-brand {
@@ -373,6 +374,9 @@ html {
     z-index: 1000;
 }
 
+/* Ensure theme toggle doesn't block navbar interactions */
+#themeToggle, #theme-toggle { z-index: 900; }
+
 .back-to-top.visible {
     opacity: 1;
     visibility: visible;
@@ -441,6 +445,17 @@ html {
 .filter-btn:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(5, 219, 242, 0.35);
+}
+
+/* Sticky filters row in Projects section */
+.filters-sticky {
+    position: sticky;
+    top: 72px; /* below fixed home navbar */
+    z-index: 900;
+}
+
+#projets .project-filters {
+    backdrop-filter: saturate(120%) blur(4px);
 }
 
 /* Blog Section (supprimée) */

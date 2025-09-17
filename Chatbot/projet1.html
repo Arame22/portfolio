@@ -13,7 +13,7 @@
     
     <style>
         .project-header {
-            background: linear-gradient(135deg, rgba(2, 8, 115, 0.92) 0%, rgba(1, 11, 64, 0.85) 60%, rgba(5, 242, 219, 0.12) 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
             padding: 1rem 0;
             margin-bottom: 1rem;
@@ -83,8 +83,12 @@
             margin: 2rem 0;
         }
         
-        .gallery-item { position: relative; }
-        .gallery-media { overflow: hidden; border-radius: 1rem; aspect-ratio: 16/9; }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            aspect-ratio: 16/9;
+        }
         
         .gallery-item img {
             width: 100%;
@@ -124,10 +128,22 @@
             font-size: 1rem;
         }
         
-        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; }
-        body { padding-top: 72px; }
-        .project-header { margin-top: 0; }
-        .gallery-caption { margin-top: 0.5rem; text-align: center; color: var(--text-light); font-weight: 500; }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        body {
+            padding-top: 60px;
+        }
+        
+        .project-header {
+            margin-top: 60px;
+        }
     </style>
 </head>
 <body data-bs-theme="light">
@@ -238,22 +254,13 @@
             <h2 class="section-title">Galerie du Projet</h2>
             <div class="project-gallery">
                 <div class="gallery-item">
-                    <div class="gallery-media">
-                        <img src="interface chatbot.png" alt="Interface du chatbot">
-                    </div>
-                    <div class="gallery-caption">Interface</div>
+                    <img src="interface%20chatbot.png" alt="Interface du chatbot">
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-media">
-                        <img src="Tableau de bord.png" alt="Tableau de bord du chatbot">
-                    </div>
-                    <div class="gallery-caption">Tableau de bord</div>
+                    <img src="Tableau%20de%20bord.png" alt="Tableau de bord du chatbot">
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-media">
-                        <img src="statistique et utilisation.png" alt="Statistiques et utilisation du chatbot">
-                    </div>
-                    <div class="gallery-caption">Statistiques</div>
+                    <img src="statistique%20et%20utilisation.png" alt="Statistiques et utilisation du chatbot">
                 </div>
             </div>
         </section>
