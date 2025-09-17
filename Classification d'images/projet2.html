@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Classification d'Images - Ndeye Arame NIANG</title>
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 1rem;
+        }
+        
+        .project-header .container {
+            padding: 0.5rem;
+        }
+        
+        .project-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-header .lead {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-stack {
+            margin: 0.5rem 0;
+        }
+        
+        .project-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .project-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .tech-badge {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            aspect-ratio: 16/9;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        body {
+            padding-top: 60px;
+        }
+        
+        .project-header {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body data-bs-theme="light">
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="btn btn-sm position-fixed top-0 end-0 m-3" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" aria-label="Retour au portfolio">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projets">Retour aux projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Accueil</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <header class="project-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">Classification d'Images de Champs de Maïs</h1>
+                    <p class="lead mb-4">Une solution d'IA pour l'optimisation de l'irrigation agricole</p>
+                    <div class="tech-stack justify-content-center">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">CNN</span>
+                        <span class="tech-badge">VGG19</span>
+                        <span class="tech-badge">VGG16</span>
+                        <span class="tech-badge">Xception</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <main class="container">
+        <!-- Project Overview -->
+        <section class="mb-5">
+            <h2 class="section-title">Aperçu du Projet</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="lead">Développement d'un modèle de classification multi-classes pour l'identification des zones d'irrigation dans les champs de maïs.</p>
+                    <p>Ce projet vise à optimiser l'utilisation de l'eau en agriculture en identifiant précisément les zones nécessitant une irrigation. Le système utilise des images capturées par smartphone pour simuler une vue depuis une machine de pulvérisation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Stats -->
+        <section class="mb-5">
+            <div class="project-stats">
+                <div class="stat-card">
+                    <div class="stat-number">94%</div>
+                    <div class="stat-label">Précision du modèle</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Classes identifiées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Images traitées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">Économie d'eau</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Timeline -->
+        <section class="mb-5">
+            <h2 class="section-title">Déroulement du Projet</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="project-timeline">
+                        <div class="timeline-item">
+                            <h4>Phase 1: Collecte de Données</h4>
+                            <p>Acquisition et annotation d'images de champs de maïs dans différentes conditions.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Phase 2: Préparation des Données</h4>
+                            <p>Prétraitement des images et création des ensembles d'entraînement, validation et test.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Phase 3: Développement des Modèles</h4>
+                            <p>Implémentation et entraînement des modèles CNN avec différentes architectures.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Phase 4: Optimisation et Déploiement</h4>
+                            <p>Fine-tuning des modèles et intégration dans un système de recommandation d'irrigation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Gallery -->
+        <section class="mb-5">
+            <h2 class="section-title">Galerie du Projet</h2>
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="img/classification1.jpg" alt="Exemple d'image de champ">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/classification2.jpg" alt="Résultats de classification">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/classification3.jpg" alt="Interface de visualisation">
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="mb-5">
+            <h2 class="section-title">Détails Techniques</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h4>Architecture des Modèles</h4>
+                    <p>Utilisation de trois architectures CNN différentes (VGG19, VGG16, Xception) pour comparer leurs performances sur la tâche de classification.</p>
+                    
+                    <h4>Prétraitement des Images</h4>
+                    <p>Techniques avancées de prétraitement incluant la normalisation, l'augmentation de données et la segmentation des images.</p>
+                    
+                    <h4>Optimisation</h4>
+                    <p>Utilisation de techniques de fine-tuning et de transfer learning pour améliorer la précision du modèle tout en réduisant le temps d'entraînement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Impact -->
+        <section class="mb-5">
+            <h2 class="section-title">Impact du Projet</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Résultats Obtenus</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Précision de classification de 94% sur les données de test
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Réduction de 30% de la consommation d'eau
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Temps de traitement réduit de 50% par rapport aux méthodes traditionnelles
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 Ndeye Arame NIANG. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://github.com/Arame22?tab=repositories" class="text-white me-3" aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/ndeye-arame-niang-b62909229/" class="text-white" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html> 

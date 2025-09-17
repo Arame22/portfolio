@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse des Sentiments - Ndeye Arame NIANG</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .project-header { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 1rem 0; margin-bottom: 1rem; }
+        .project-header .container { padding: 0.5rem; }
+        .project-header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .project-header .lead { font-size: 1rem; margin-bottom: 0.5rem; }
+        .tech-stack { margin: 0.5rem 0; }
+        .project-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 1rem; aspect-ratio: 16/9; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .project-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .stat-card { background-color: var(--card-bg); padding: 1.5rem; border-radius: 1rem; text-align: center; box-shadow: var(--shadow-sm); }
+        .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .stat-label { color: var(--text-light); font-size: 1rem; }
+    </style>
+</head>
+<body data-bs-theme="light">
+    <button id="themeToggle" class="btn btn-sm position-fixed top-0 end-0 m-3" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" aria-label="Retour au portfolio">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projets">Retour aux projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Accueil</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">Analyse des Sentiments</h1>
+                    <p class="lead mb-4">Modèle d'analyse de sentiments pour des commentaires en ligne</p>
+                    <div class="tech-stack justify-content-center">
+                        <span class="badge bg-light text-dark me-2">Python</span>
+                        <span class="badge bg-light text-dark me-2">NLTK</span>
+                        <span class="badge bg-light text-dark me-2">Scikit-learn</span>
+                        <span class="badge bg-light text-dark me-2">TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="mb-5">
+            <h2 class="section-title">Aperçu du Projet</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="lead">Développement d'un modèle d'analyse de sentiments pour classifier des commentaires d'utilisateurs (positif, négatif, neutre).</p>
+                    <p>Le système utilise des techniques de NLP pour le prétraitement (tokenization, lemmatisation) et des modèles classiques et neuraux pour la classification.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="project-stats">
+                <div class="stat-card"><div class="stat-number">92%</div><div class="stat-label">Précision</div></div>
+                <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Classes</div></div>
+                <div class="stat-card"><div class="stat-number">50K</div><div class="stat-label">Commentaires</div></div>
+                <div class="stat-card"><div class="stat-number"><i class="fas fa-bolt"></i></div><div class="stat-label">Prédictions rapides</div></div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title">Galerie du Projet</h2>
+            <div class="project-gallery">
+                <div class="gallery-item"><img src="analyze1.jpg" alt="Prétraitement"></div>
+                <div class="gallery-item"><img src="analyze2.jpg" alt="Matrice de confusion"></div>
+                <div class="gallery-item"><img src="analyze3.jpg" alt="Courbes d'apprentissage"></div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title">Détails Techniques</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h4>Pipeline NLP</h4>
+                    <p>Nettoyage, tokenization, lemmatisation, vectorisation (TF-IDF), puis classification (SVM/LogReg) et modèle profond (LSTM).</p>
+                    <h4>Évaluation</h4>
+                    <p>Validation croisée, F1-score macro, gestion du déséquilibre avec pondération de classes.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 Ndeye Arame NIANG. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://github.com/Arame22?tab=repositories" class="text-white me-3" aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/ndeye-arame-niang-b62909229/" class="text-white" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

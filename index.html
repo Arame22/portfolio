@@ -3,26 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Ndeye Arame NIANG - Data Analyst spécialisée en IA et DevOps">
+    <meta name="keywords" content="data analyst, IA, DevOps, portfolio, data science, machine learning, Python, Docker, Linux, SQL">
+    <meta name="author" content="Ndeye Arame NIANG">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Portfolio - Ndeye Arame NIANG">
+    <meta property="og:description" content="Data Analyst | IA & DevOps Enthusiast">
+    <meta property="og:image" content="img/portrait.jpg">
+    <meta property="og:url" content="[Votre URL]">
+    
     <title>Portfolio - Ndeye Arame NIANG</title>
+    
+    <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
 </head>
-<body>
+<body data-bs-theme="light">
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="btn btn-sm position-fixed top-0 end-0 m-3" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Header and Navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="#">Portfolio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <a class="navbar-brand" href="#" aria-label="Accueil">Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projets" aria-label="Voir mes projets">Projets</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#apropos" aria-label="À propos de moi">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#competences" aria-label="Mes compétences">Compétences</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#blog" aria-label="Blog technique">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact" aria-label="Me contacter">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,112 +50,139 @@
     </header>
 
     <!-- Accueil Section -->
-    <section id="accueil" class="bg-primary text-white text-center py-5">
+    <section id="accueil" class="py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
         <div class="container">
-            <h1 class="display-4">Ndeye Arame NIANG</h1>
-            <p class="lead">Junior Data Analyst | IA & DevOps Enthusiast</p>
-            <a href="#projets" class="btn btn-light btn-lg">Voir mes projets</a>
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8 mx-auto text-center text-white">
+                    <h1 class="display-4 fw-bold mb-4">Ndeye Arame NIANG</h1>
+                    <p class="lead mb-4">Junior Data Analyst | IA & DevOps Enthusiast</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#projets" class="btn btn-light btn-lg">Voir mes projets</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Me contacter</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- À propos Section -->
     <section id="apropos" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">À propos de moi</h2>
+            <h2 class="section-title">À propos de moi</h2>
             <div class="row align-items-center">
                 <div class="col-md-4">
-                    <img src="img/portrait.jpg" alt="Portrait" class="img-fluid rounded-circle">
+                    <img src="img/portrait.jpg" alt="Portrait" class="img-fluid rounded-circle shadow-lg" style="max-width: 300px;">
                 </div>
                 <div class="col-md-8">
-                    <p>Je suis une jeune passionnée de data science et d’intelligence artificielle, avec une expertise en analyse de données et un intérêt marqué pour les outils DevOps. Diplômée en Big Data et Intelligence Artificielle, je cherche à relever des défis techniques et stratégiques pour transformer les données en solutions concrètes. Mon objectif : utiliser la puissance des données et de l’IA pour concevoir des innovations qui font la différence.
-                    </p>
-                    <a href="cv_ndeye_arame_niang.pdf" class="btn btn-primary mt-3">Télécharger mon CV</a>
+                    <p class="lead mb-4">Je suis une jeune passionnée de data science et d'intelligence artificielle, avec une expertise en analyse de données et un intérêt marqué pour les outils DevOps.</p>
+                    <p class="mb-4">Diplômée en Big Data et Intelligence Artificielle, je cherche à relever des défis techniques et stratégiques pour transformer les données en solutions concrètes. Mon objectif : utiliser la puissance des données et de l'IA pour concevoir des innovations qui font la différence.</p>
+                    <div class="d-flex gap-3">
+                        <a href="cv_ndeye_arame_niang.pdf" class="btn btn-primary">Télécharger mon CV</a>
+                        <a href="#contact" class="btn btn-outline-primary">Me contacter</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Projets Section -->
-<section id="projets" class="py-5 bg-light" style="background-image: url('img/background.jpg'); background-size: cover; background-position: center;">
-    <div class="container">
-        <h2 class="text-center mb-4 text-white">Mes Projets</h2>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <img src="img/projet1.jpg" class="card-img-top img-fluid" alt="Projet 1" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Chatbot</h5>
-                        <p class="card-text">L'objectif principal de ce projet est de développer un chatbot éducatif et administratif pour le programme en ligne. Ce chatbot fournit une assistance aux étudiants et aux professeurs, tant pour leurs besoins académiques que pour des tâches administratives telles que l’inscription et la recherche de stages.
-                        Le développement repose sur l’utilisation de l'IA Générative, notamment via COPILOT Studio de Microsoft, permettant l’intégration de divers types de données (pdf, contenu textuel des chats).
-                        </p>
-                        <p><strong>Technologies :</strong> Python, Copilot Studio, PHP, Azure, Mustach Template</p>
-                        <a href="projet1.html" class="btn btn-primary">Voir plus</a>
+    <!-- Projets Section -->
+    <section id="projets" class="py-5 bg-light" style="background-image: url('img/projet3.webp'); background-size: cover; background-position: center;">
+        <div class="container">
+            <h2 class="text-center mb-4 text-white">Mes Projets</h2>
+            
+            <!-- Filtres -->
+            <div class="row mb-4 justify-content-center">
+                <div class="col-md-8">
+                    <div class="btn-group" role="group" aria-label="Filtres des projets">
+                        <button type="button" class="btn btn-outline-light filter-btn active" data-filter="all">Tous</button>
+                        <button type="button" class="btn btn-outline-light filter-btn" data-filter="ia">IA</button>
+                        <button type="button" class="btn btn-outline-light filter-btn" data-filter="data">Data Analysis</button>
+                        <button type="button" class="btn btn-outline-light filter-btn" data-filter="devops">DevOps</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <img src="img/projet2.webp" class="card-img-top img-fluid" alt="Projet 2" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Classification d'images</h5>
-                        <p class="card-text">Le projet consiste à développer un modèle de classification multi-classes d'images de champs de maïs, capturées à l'aide d'un smartphone, afin de simuler une vue depuis une machine de pulvérisation équipée d'une caméra. L'objectif est d'identifier les zones à arroser en distinguant quatre classes principales : sol sec sans végétation, végétation de maïs, plantes herbacées diverses, et une combinaison de maïs et de mauvaises herbes.</p>
-                        <p><strong>Technologies :</strong> Python, CNN, Models préentrainés(VGG19, VGG16, Xception)</p>
-                        <a href="projet2.html" class="btn btn-primary">Voir plus</a>
+
+            <div class="row g-4" id="projects-container">
+                <!-- Projet Chatbot -->
+                <div class="col-md-6 project-item" data-category="ia">
+                    <div class="card h-100">
+                        <img src="img/projet1.jpg" class="card-img-top img-fluid" alt="Projet Chatbot" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Chatbot</h5>
+                            <p class="card-text">L'objectif principal de ce projet est de développer un chatbot éducatif et administratif pour le programme en ligne. Ce chatbot fournit une assistance aux étudiants et aux professeurs, tant pour leurs besoins académiques que pour des tâches administratives telles que l'inscription et la recherche de stages.
+                            Le développement repose sur l'utilisation de l'IA Générative, notamment via COPILOT Studio de Microsoft, permettant l'intégration de divers types de données (pdf, contenu textuel des chats).
+                            </p>
+                            <p><strong>Technologies :</strong> Python, Copilot Studio, PHP, Azure, Mustach Template</p>
+                            <a href="projet1.html" class="btn btn-primary">Voir plus</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <img src="img/projet3.webp" class="card-img-top img-fluid" alt="Projet 3" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Classification de texte</h5>
-                        <p class="card-text">L'objectif de ce projet est de construire un modèle de classification de critiques de films en français selon leur tonalité, qu'elle soit positive ou négative. Pour ce faire, nous disposons d'un ensemble de données comprenant 100 000 critiques positives et 100 000 critiques négatives extraites du site allocine.fr sur la période de 2006 à 2020. Le jeu de données est divisé en ensembles d'entraînement (160 000 critiques), de validation (20 000 critiques) et de test (20 000 critiques).</p>
-                        <p><strong>Technologies :</strong> Python, TF-IDF, Bow, CNN, LSTM</p>
-                        <a href="projet3.html" class="btn btn-primary">Voir plus</a>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="img/projet2.webp" class="card-img-top img-fluid" alt="Projet 2" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Classification d'images</h5>
+                            <p class="card-text">Le projet consiste à développer un modèle de classification multi-classes d'images de champs de maïs, capturées à l'aide d'un smartphone, afin de simuler une vue depuis une machine de pulvérisation équipée d'une caméra. L'objectif est d'identifier les zones à arroser en distinguant quatre classes principales : sol sec sans végétation, végétation de maïs, plantes herbacées diverses, et une combinaison de maïs et de mauvaises herbes.</p>
+                            <p><strong>Technologies :</strong> Python, CNN, Models préentrainés(VGG19, VGG16, Xception)</p>
+                            <a href="projet2.html" class="btn btn-primary">Voir plus</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <img src="img/Technicien.webp" class="card-img-top img-fluid" alt="Projet 4" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Prédiction des risques pour les techniciens en intervention</h5>
-                        <p class="card-text">Analyse de données pour prédire les instants où un technicien est en danger lors d’interventions. Modélisation prédictive avec une précision de 86% Random Forest, Logistic Regression). Utilisation de Python, Sklearn, Pandas, Matplotlib, et Seaborn.</p>
-                        <p><strong>Technologies :</strong> Python, NLTK, Scikit-learn, TensorFlow, Pandas, Matplotlib, Seaborn</p>
-                        <a href="C:\Users\PC\Documents\portfolio\Prediction de cas de danger.pdf" class="btn btn-primary">Voir plus</a>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="img/projet3.webp" class="card-img-top img-fluid" alt="Projet 3" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Classification de texte</h5>
+                            <p class="card-text">L'objectif de ce projet est de construire un modèle de classification de critiques de films en français selon leur tonalité, qu'elle soit positive ou négative. Pour ce faire, nous disposons d'un ensemble de données comprenant 100 000 critiques positives et 100 000 critiques négatives extraites du site allocine.fr sur la période de 2006 à 2020. Le jeu de données est divisé en ensembles d'entraînement (160 000 critiques), de validation (20 000 critiques) et de test (20 000 critiques).</p>
+                            <p><strong>Technologies :</strong> Python, TF-IDF, Bow, CNN, LSTM</p>
+                            <a href="projet3.html" class="btn btn-primary">Voir plus</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <img src="img/projet_bi.webp" class="card-img-top img-fluid" alt="Projet BI" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Projet BI : Analyse des Ventes</h5>
-                        <p class="card-text">Développement d’un datamart pour les ventes et création de rapports dynamiques sous Power BI. Objectifs principaux :
-                            <ul>
-                                <li>Mesurer les performances des employés et des produits.</li>
-                                <li>Analyser les ventes par catégories et tendances annuelles.</li>
-                            </ul>
-                        </p>
-                        <p><strong>Technologies :</strong> Power BI, SQL</p>
-                        <a href="Projet_BI_Details.html" class="btn btn-primary">Voir plus</a>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="img/Technicien.webp" class="card-img-top img-fluid" alt="Projet 4" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Prédiction des risques pour les techniciens en intervention</h5>
+                            <p class="card-text">Analyse de données pour prédire les instants où un technicien est en danger lors d'interventions. Modélisation prédictive avec une précision de 86% Random Forest, Logistic Regression). Utilisation de Python, Sklearn, Pandas, Matplotlib, et Seaborn.</p>
+                            <p><strong>Technologies :</strong> Python, NLTK, Scikit-learn, TensorFlow, Pandas, Matplotlib, Seaborn</p>
+                            <a href="Prédiction des risques pour les techniciens en intervention/projet4.html" class="btn btn-primary">Voir plus</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <img src="img/analyse sentiment.webp" class="card-img-top img-fluid" alt="Projet 4" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Analyse des Sentiments</h5>
-                        <p class="card-text">Ce projet vise à développer un modèle d'analyse des sentiments pour les commentaires des utilisateurs sur les réseaux sociaux. L'objectif est de déterminer si les commentaires sont positifs, négatifs ou neutres.</p>
-                        <p><strong>Technologies :</strong> Python, NLTK, Scikit-learn, TensorFlow</p>
-                        <a href="projet4.html" class="btn btn-primary">Voir plus</a>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="Projet BI  Analyse des Ventes/projet_bi.webp" class="card-img-top img-fluid" alt="Projet BI" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet BI : Analyse des Ventes</h5>
+                            <p class="card-text">Développement d'un datamart pour les ventes et création de rapports dynamiques sous Power BI. Objectifs principaux :
+                                <ul>
+                                    <li>Mesurer les performances des employés et des produits.</li>
+                                    <li>Analyser les ventes par catégories et tendances annuelles.</li>
+                                </ul>
+                            </p>
+                            <p><strong>Technologies :</strong> Power BI, SQL</p>
+                            <a href="Projet BI  Analyse des Ventes/Projet_BI_Details.html" class="btn btn-primary">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="Analyse des Sentiments/analyse sentiment.webp" class="card-img-top img-fluid" alt="Projet 4" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Analyse des Sentiments</h5>
+                            <p class="card-text">Ce projet vise à développer un modèle d'analyse des sentiments pour les commentaires des utilisateurs sur les réseaux sociaux. L'objectif est de déterminer si les commentaires sont positifs, négatifs ou neutres.</p>
+                            <p><strong>Technologies :</strong> Python, NLTK, Scikit-learn, TensorFlow</p>
+                            <a href="Analyse des Sentiments/projet_sentiments.html" class="btn btn-primary">Voir plus</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    
+
     <!-- Compétences Section -->
     <section id="competences" class="py-5">
         <div class="container">
@@ -161,17 +208,49 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-center text-white py-3">
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
         <div class="container">
-            <p>&copy; 2024 Ndeye Arame NIANG. Tous droits réservés.</p>
-            <div>
-                <a href="https://github.com/Arame22?tab=repositories" class="text-white me-3"><i class="fab fa-github"></i></a>
-                <a #contact href="https://www.linkedin.com/in/ndeye-arame-niang-b62909229/" class="text-white"><i class="fab fa-linkedin"></i></a>
+            <h2 class="text-center mb-4">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="list-group text-start">
+                        <a href="mailto:ndeye.arame@example.com" class="list-group-item list-group-item-action d-flex align-items-center">
+                            <i class="fas fa-envelope me-3"></i>
+                            <span>ng.niang1@outlook.fr</span>
+                        </a>
+                        <a href="tel:+221770000000" class="list-group-item list-group-item-action d-flex align-items-center">
+                            <i class="fas fa-phone me-3"></i>
+                            <span>+33 755292583</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ndeye-arame-niang-b62909229/" target="_blank" rel="noopener" class="list-group-item list-group-item-action d-flex align-items-center">
+                            <i class="fab fa-linkedin me-3"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 Ndeye Arame NIANG. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://github.com/Arame22?tab=repositories" class="text-white me-3" aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/ndeye-arame-niang-b62909229/" class="text-white" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
