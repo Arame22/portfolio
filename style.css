@@ -1,14 +1,14 @@
 /* Variables globales */
 :root {
     /* Couleurs principales */
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --primary-light: #60a5fa;
+    --primary-color: #020873; /* Deep Blue */
+    --primary-dark: #020659;  /* Deeper Blue */
+    --primary-light: #05DBF2; /* Bright Cyan as light accent for UI states */
     
     /* Couleurs secondaires */
-    --secondary-color: #7c3aed;
-    --secondary-dark: #6d28d9;
-    --secondary-light: #a78bfa;
+    --secondary-color: #010B40;   /* Navy */
+    --secondary-dark: #020659;    /* Align with primary dark */
+    --secondary-light: #05F2DB;   /* Mint accent */
     
     /* Couleurs de fond */
     --background-color: #ffffff;
@@ -21,9 +21,9 @@
     --text-dark: #0f172a;
     
     /* Couleurs d'accent */
-    --accent-color: #f59e0b;
-    --accent-dark: #d97706;
-    --accent-light: #fbbf24;
+    --accent-color: #05DBF2;   /* Cyan */
+    --accent-dark: #05C6DB;    /* Darker Cyan */
+    --accent-light: #05F2DB;   /* Mint */
     
     /* Couleurs de statut */
     --success-color: #10b981;
@@ -46,11 +46,11 @@
 }
 
 [data-bs-theme="dark"] {
-    --background-color: #0f172a;
-    --background-alt: #1e293b;
-    --card-bg: #1e293b;
-    --text-color: #f8fafc;
-    --text-light: #cbd5e1;
+    --background-color: #0b1220;
+    --background-alt: #0f172a;
+    --card-bg: #0f172a;
+    --text-color: #e5e7eb;
+    --text-light: #94a3b8;
     --text-dark: #ffffff;
 }
 
@@ -67,9 +67,9 @@ body {
 
 /* 🏠 HEADER & NAVIGATION */
 header {
-    background: #1E293B; /* Bleu nuit */
+    background: var(--background-color);
     padding: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
     position: fixed;
     width: 100%;
     top: 0;
@@ -182,12 +182,16 @@ form button:hover {
 
 /* 📌 PIED DE PAGE */
 footer {
-    background: #1E293B; /* Bleu nuit */
-    color: white;
+    background: var(--background-alt);
+    color: var(--text-color);
     text-align: center;
     padding: 20px;
     margin-top: 40px;
 }
+
+/* Override utilitaires sombres dans les pieds de page Bootstrap */
+footer.bg-dark { background-color: var(--background-alt) !important; }
+footer, footer a, footer .text-white { color: var(--text-color) !important; }
 
 /* Navigation */
 .navbar {
@@ -212,8 +216,8 @@ footer {
 }
 
 .nav-link:hover {
-    background-color: var(--primary-light);
-    color: white !important;
+    background-color: rgba(5, 219, 242, 0.12);
+    color: var(--primary-dark) !important;
 }
 
 /* Cartes de projets */
@@ -314,6 +318,13 @@ footer {
     animation: fadeInUp 0.6s ease forwards;
 }
 
+/* Manquante: animation fade-in utilisée par script.js */
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .section-title {
@@ -407,17 +418,29 @@ html {
 
 /* Filtres de projets */
 .filter-btn {
-    margin: 0 5px;
-    transition: all 0.3s ease;
+    margin: 0 6px;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(5, 219, 242, 0.15);
 }
 
 .filter-btn.active {
-    background-color: var(--primary-color);
+    background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: transparent;
     color: white;
 }
 
-.filter-btn:not(.active):hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.filter-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(5, 219, 242, 0.35);
 }
 
 /* Blog Section (supprimée) */

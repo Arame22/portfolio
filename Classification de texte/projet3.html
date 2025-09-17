@@ -83,12 +83,8 @@
             margin: 2rem 0;
         }
         
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
-            aspect-ratio: 16/9;
-        }
+        .gallery-item { position: relative; }
+        .gallery-media { overflow: hidden; border-radius: 1rem; aspect-ratio: 16/9; }
         
         .gallery-item img {
             width: 100%;
@@ -128,22 +124,10 @@
             font-size: 1rem;
         }
         
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        
-        body {
-            padding-top: 60px;
-        }
-        
-        .project-header {
-            margin-top: 60px;
-        }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; }
+        body { padding-top: 72px; }
+        .project-header { margin-top: 0; }
+        .gallery-caption { margin-top: 0.5rem; text-align: center; color: var(--text-light); font-weight: 500; }
     </style>
 </head>
 <body data-bs-theme="light">
@@ -254,13 +238,22 @@
             <h2 class="section-title">Galerie du Projet</h2>
             <div class="project-gallery">
                 <div class="gallery-item">
-                    <img src="img/text1.jpg" alt="Visualisation des données">
+                    <div class="gallery-media">
+                        <img src="img/text1.jpg" alt="Visualisation des données">
+                    </div>
+                    <div class="gallery-caption">Visualisation des données</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="img/text2.jpg" alt="Architecture du modèle">
+                    <div class="gallery-media">
+                        <img src="img/text2.jpg" alt="Architecture du modèle">
+                    </div>
+                    <div class="gallery-caption">Architecture du modèle</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="img/text3.jpg" alt="Résultats de classification">
+                    <div class="gallery-media">
+                        <img src="img/text3.jpg" alt="Résultats de classification">
+                    </div>
+                    <div class="gallery-caption">Résultats de classification</div>
                 </div>
             </div>
         </section>
@@ -316,7 +309,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2024 Ndeye Arame NIANG. Tous droits réservés.</p>
+                    <p class="mb-0">&copy; 2025 Ndeye Arame NIANG. Tous droits réservés.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <a href="https://github.com/Arame22?tab=repositories" class="text-white me-3" aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
