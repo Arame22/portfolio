@@ -24,16 +24,16 @@
 </head>
 <script>
   fetch("https://niangnd2.app.n8n.cloud/webhook/site-visit", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      page: window.location.href,
-      timestamp: new Date().toISOString()
-    })
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    page: window.location.href,
+    timestamp: new Date().toISOString()
+  })
+})
   .then(res => res.json())
   .then(data => console.log("Visite enregistrée :", data))
-  .catch(err => console.error("Erreur :", err))
-})
+  .catch(err => console.error("Erreur :", err));
 </script>
 <body data-bs-theme="light">
     <!-- Theme Toggle Button -->
