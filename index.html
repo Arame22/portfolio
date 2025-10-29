@@ -22,6 +22,16 @@
     <link rel="stylesheet" href="style.css">
     
 </head>
+<script>
+  fetch("https://ton-instance-n8n.com/webhook/site-visit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      page: window.location.href,
+      timestamp: new Date().toISOString()
+    })
+  });
+</script>
 <body data-bs-theme="light">
     <!-- Theme Toggle Button -->
     <button id="themeToggle" class="btn btn-sm position-fixed top-0 end-0 m-3" aria-label="Toggle dark mode">
@@ -38,7 +48,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#projets" aria-label="Voir mes projets">Projets</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects" aria-label="Voir mes projects">projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="#apropos" aria-label="À propos de moi">À propos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#competences" aria-label="Mes compétences">Compétences</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact" aria-label="Me contacter">Contact</a></li>
@@ -57,7 +67,7 @@
                     <p class="lead mb-4">Ingénieur Big Data & IA | Data
                         Scientist</p>
                     <div class="d-flex justify-content-center gap-3">
-                        <a href="#projets" class="btn btn-light btn-lg">Voir mes projets</a>
+                        <a href="#projects" class="btn btn-light btn-lg">Voir mes projects</a>
                         <a href="#contact" class="btn btn-outline-light btn-lg">Me contacter</a>
                     </div>
                 </div>
@@ -86,15 +96,15 @@
         </div>
     </section>
 
-    <!-- Projets Section -->
-    <section id="projets" class="py-5 bg-light">
+    <!-- projects Section -->
+    <section id="projects" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4 text-white">Mes Projets</h2>
+            <h2 class="text-center mb-4 text-white">Mes projects</h2>
             
             <!-- Filtres -->
             <div class="row mb-4 justify-content-center project-filters">
                 <div class="col-md-8 filters-sticky">
-                    <div class="btn-group" role="group" aria-label="Filtres des projets">
+                    <div class="btn-group" role="group" aria-label="Filtres des projects">
                         <button type="button" class="btn btn-outline-light filter-btn active" data-filter="all">Tous</button>
                         <button type="button" class="btn btn-outline-light filter-btn" data-filter="ia">IA</button>
                         <button type="button" class="btn btn-outline-light filter-btn" data-filter="data">Data Analysis</button>
