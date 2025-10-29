@@ -30,10 +30,10 @@
       page: window.location.href,
       timestamp: new Date().toISOString()
     })
-  })
   .then(res => res.json())
   .then(data => console.log("Visite enregistrée :", data))
-  .catch(err => console.error("Erreur :", err));
+  .catch(err => console.error("Erreur :", err))
+})
 </script>
 <body data-bs-theme="light">
     <!-- Theme Toggle Button -->
