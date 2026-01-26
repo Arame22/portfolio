@@ -458,4 +458,63 @@ html {
     backdrop-filter: saturate(120%) blur(4px);
 }
 
-/* Blog Section (supprimée) */
+/* Blog Section */
+.nav-link.active {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+/* Blog Articles */
+article.card {
+    transition: all var(--transition-normal);
+}
+
+article.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+article.card a {
+    transition: color var(--transition-fast);
+}
+
+article.card a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Blog Pagination */
+.pagination .page-link {
+    color: var(--primary-color);
+    border-color: var(--border-color);
+    background-color: var(--card-bg);
+}
+
+.pagination .page-link:hover {
+    background-color: var(--background-alt);
+    border-color: var(--primary-color);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Blog Sidebar */
+.card h5 {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.card ul li a {
+    transition: color var(--transition-fast);
+}
+
+.card ul li a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Blog Badges */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.65rem;
+}

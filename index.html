@@ -23,18 +23,131 @@
     
 </head>
 <script>
-  fetch("https://niangnd2.app.n8n.cloud/webhook/site-visit", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
+  const VISITOR_STORAGE_KEY = "nan-portfolio-visitor-id";
+
+  const getVisitorId = () => {
+    try {
+      const existingId = window.localStorage.getItem(VISITOR_STORAGE_KEY);
+      if (existingId) return existingId;
+
+      const newId = crypto.randomUUID ? crypto.randomUUID() : `visitor-${Date.now()}`;
+      window.localStorage.setItem(VISITOR_STORAGE_KEY, newId);
+      return newId;
+    } catch (error) {
+      console.warn("Impossible de stocker l'ID visiteur :", error);
+      return `visitor-${Date.now()}`;
+    }
+  };
+
+  const payload = {
     page: window.location.href,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    visitorId: getVisitorId(),
+    userAgent: navigator.userAgent,
+    language: navigator.language,
+    screen: `${window.screen.width}x${window.screen.height}`,
+    referrer: document.referrer || "direct"
+  };
+
+  fetch("https://niangnd2.app.n8n.cloud/webhook/site-visit", {
+
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
   })
-})
-  .then(res => res.json())
-  .then(data => console.log("Visite enregistrée :", data))
-  .catch(err => console.error("Erreur :", err));
+    .then(res => res.json())
+    .then(data => console.log("Visite enregistrée :", data))
+    .catch(err => console.error("Erreur :", err));
 </script>
+    <!-- Widget Chatbot Portfolio -->
+    <div id="bot-widget" class="position-fixed bottom-0 end-0 m-3" style="z-index: 1050; max-width: 320px;">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <span>Assistant du portfolio</span>
+                <button type="button" class="btn-close btn-close-white btn-sm" aria-label="Fermer" onclick="toggleBot()"></button>
+            </div>
+            <div class="card-body" style="height: 260px; overflow-y: auto; font-size: 0.9rem;" id="bot-messages">
+                <div class="text-muted">Pose-moi une question sur mes projets, mon parcours, mes compétences...</div>
+            </div>
+            <div class="card-footer p-2">
+                <div class="input-group input-group-sm">
+                    <input id="bot-input" type="text" class="form-control" placeholder="Écrire un message...">
+                    <button class="btn btn-primary" id="bot-send">Envoyer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton flottant pour ouvrir/fermer le bot -->
+    <button id="bot-toggle-btn"
+            class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3"
+            style="width: 56px; height: 56px; z-index: 1040;"
+            onclick="toggleBot()"
+            aria-label="Ouvrir le chatbot">
+        <i class="fas fa-comments"></i>
+    </button>
+    <script>
+        const API_URL = "http://127.0.0.1:8000/ask"; // à changer plus tard par ton vrai domaine
+  
+        const botWidget = document.getElementById("bot-widget");
+        const botToggleBtn = document.getElementById("bot-toggle-btn");
+        const botInput = document.getElementById("bot-input");
+        const botSend = document.getElementById("bot-send");
+        const botMessages = document.getElementById("bot-messages");
+  
+        function toggleBot() {
+          if (!botWidget) return;
+          const isHidden = botWidget.style.display === "none" || botWidget.style.display === "";
+          botWidget.style.display = isHidden ? "block" : "none";
+        }
+  
+        function addMessage(text, from) {
+          if (!botMessages) return;
+          const div = document.createElement("div");
+          div.className = from === "user" ? "text-end mb-2" : "text-start mb-2";
+          div.innerHTML = from === "user"
+            ? `<span class="badge bg-secondary">${text}</span>`
+            : `<span class="badge bg-light text-dark border">${text}</span>`;
+          botMessages.appendChild(div);
+          botMessages.scrollTop = botMessages.scrollHeight;
+        }
+  
+        async function askBot() {
+          if (!botInput) return;
+          const question = botInput.value.trim();
+          if (!question) return;
+  
+          addMessage(question, "user");
+          botInput.value = "";
+  
+          try {
+            const res = await fetch(API_URL, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ question }),
+            });
+            const data = await res.json();
+            addMessage(data.answer || "Je n'ai pas compris la réponse de l'API.", "bot");
+          } catch (e) {
+            console.error(e);
+            addMessage("Erreur lors de l'appel à l'API.", "bot");
+          }
+        }
+  
+        if (botSend && botInput) {
+          botSend.addEventListener("click", askBot);
+          botInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") askBot();
+          });
+        }
+  
+        // Par défaut : le widget est masqué, seul le bouton bulle apparaît
+        if (botWidget) {
+          botWidget.style.display = "none";
+        }
+      </script>
+  </body>
+  </html>
 <body data-bs-theme="light">
     <!-- Theme Toggle Button -->
     <button id="themeToggle" class="btn btn-sm position-fixed top-0 end-0 m-3" aria-label="Toggle dark mode">
@@ -54,6 +167,7 @@
                         <li class="nav-item"><a class="nav-link" href="#projets" aria-label="Voir mes projets">projets</a></li>
                         <li class="nav-item"><a class="nav-link" href="#apropos" aria-label="À propos de moi">À propos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#competences" aria-label="Mes compétences">Compétences</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html" aria-label="Blog">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact" aria-label="Me contacter">Contact</a></li>
                     </ul>
                 </div>
@@ -105,7 +219,7 @@
             <h2 class="text-center mb-4 text-white">Mes projets</h2>
             
             <!-- Filtres -->
-            <div class="row mb-4 justify-content-center project-filters">
+            <div class="row mb-4 justify-content-center projet-filters">
                 <div class="col-md-8 filters-sticky">
                     <div class="btn-group" role="group" aria-label="Filtres des projets">
                         <button type="button" class="btn btn-outline-light filter-btn active" data-filter="all">Tous</button>
@@ -118,7 +232,7 @@
 
             <div class="row g-4" id="projets-container">
                 <!-- Projet Chatbot -->
-                <div class="col-md-6 project-item" data-category="ia">
+                <div class="col-md-6 projet-item" data-category="ia">
                     <div class="card h-100">
                         <img src="Chatbot/projet1.jpg" class="card-img-top img-fluid" alt="Projet Chatbot" style="height: 200px; object-fit: cover;">
                         <div class="card-body">
@@ -230,7 +344,7 @@
             <h2 class="text-center mb-4">Contact</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="list-group text-start">
+                    <div class="list-group text-start mb-4">
                         <a href="mailto:ndeye.arame@example.com" class="list-group-item list-group-item-action d-flex align-items-center">
                             <i class="fas fa-envelope me-3"></i>
                             <span>ng.niang1@outlook.fr</span>
@@ -244,6 +358,14 @@
                             <span>LinkedIn</span>
                         </a>
                     </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-10">
+                    <!-- Début de widget en ligne Calendly -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/ng-niang1" style="min-width:320px;height:700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <!-- Fin de widget en ligne Calendly -->
                 </div>
             </div>
         </div>
