@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Filtrage des projets
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectItems = document.querySelectorAll('.project-item');
+    const projectItems = document.querySelectorAll('.projet-item');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
